@@ -66,7 +66,16 @@
                 else textError.textContent = "Name is Incorrect";
             });
 
-
+            /*Checking with valid email
+            Email must have 3 mandatory parts(abc,bl&co) and 2 optional(xyz & in) with precise @ and . positions*/
+            const email=document.querySelector("#email");
+            const emailError=document.querySelector(".email-error");
+            email.addEventListener('input',function(){
+            let emailRegex=RegExp('^[a-zA-Z0-9+_-]+(?:\\.[a-zA-Z0-9_-]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z]{2,}){1,2}$');
+            if(emailRegex.test(email.value))
+                emailError.textContent="";
+            else emailError.textContent="Email is incorrect";
+            });
 
             const salary = document.querySelector('#salary');
             const output = document.querySelector('.salary-output');
