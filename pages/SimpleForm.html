@@ -88,6 +88,18 @@
             else contactError.textContent="Mobile Number is invalid"
             });
 
+            /*Following Rule 1-minimum 8 characters 
+            and validating passwords*/
+
+            const password=document.querySelector("#pwd");
+            const passwordError=document.querySelector(".pwd-error");
+            password.addEventListener('input',function(){
+            let passwordRegex=RegExp("^(?=.*[0-9])" + "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])" + "(?=\\S+$).{8,}$");
+            if(passwordRegex.test(password.value))
+                passwordError.textContent="";
+            else passwordError.textContent="Password is incorrect";
+            });
+
             const salary = document.querySelector('#salary');
             const output = document.querySelector('.salary-output');
             output.textContent = salary.value;
