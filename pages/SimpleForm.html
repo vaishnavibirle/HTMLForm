@@ -79,13 +79,13 @@
 
             /*As a user need to follow pre-defined mobile format*/
 
-            const tel=document.querySelector("#tel");
-            const telError=document.querySelector(".tel-error");
+            const contact=document.querySelector("#contact");
+            const contactError=document.querySelector(".contact-error");
             tel.addEventListener('input',function(){
-            let telRegex=RegExp("^[0-9]{2}\\s[6-9]{1}[0-9]{9}$");
-            if(telRegex.test(tel.value))
-                telError.textContent="";
-            else telError.textContent="Mobile Number is invalid"
+            let contactRegex=RegExp("^[0-9]{2}\\s[6-9]{1}[0-9]{9}$");
+            if(contactRegex.test(contact.value))
+                contactError.textContent="";
+            else contactError.textContent="Mobile Number is invalid"
             });
 
             const salary = document.querySelector('#salary');
